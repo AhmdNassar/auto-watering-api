@@ -33,7 +33,7 @@
           </div>
           <div class="x_content">
 
-            <form class="form-horizontal form-label-left" novalidate>
+            <form class="form-horizontal form-label-left" action="/dashboard/forms/newuser" method="POST" novalidate>
 
 
               <span class="section">Personal Info</span>
@@ -49,12 +49,12 @@
               </div>
 
               <div class="item form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Second Name <span
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name2">Second Name <span
                     class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                   <input id="second_name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
-                    data-validate-words="1" name="name" placeholder="Second Name" required="required" type="text">
+                    data-validate-words="1" name="name2" placeholder="Second Name" required="required" type="text">
                 </div>
               </div>
               <div class="item form-group">
@@ -80,7 +80,7 @@
                     class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="number" id="number" name="number" required="required" data-validate-minmax="10,100"
+                  <input type="number" id="number" name="number" required="required"
                     class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
@@ -101,21 +101,7 @@
                 </div>
               </div>
 
-              <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12">Role</label>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                  <div id="gender" class="btn-group" data-toggle="buttons">
-                    <label class="btn btn-default" data-toggle-class="btn-primary"
-                      data-toggle-passive-class="btn-default">
-                      <input type="radio" name="gender" value="male"> &nbsp; Admin &nbsp;
-                    </label>
-                    <label class="btn btn-primary" data-toggle-class="btn-primary"
-                      data-toggle-passive-class="btn-default">
-                      <input type="radio" name="gender" value="female"> User
-                    </label>
-                  </div>
-                </div>
-              </div>
+
 
               <div class="ln_solid"></div>
               <div class="form-group">

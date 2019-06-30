@@ -26,7 +26,7 @@ schema = {
 @app.route('')
 class AllPlants(Resource):
     # @login_required
-    @app.expect(plant_dto)
+    # @app.expect(plant_dto)
     def get(self):
         plants = Plant.query.order_by('name').all()
         if not plants:

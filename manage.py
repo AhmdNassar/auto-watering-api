@@ -33,7 +33,7 @@ app.register_blueprint(forms_bl)
 @manager.command
 @manager.option('-p', '--port', help='app port, default=5000')
 def run(port=5000):
-    host = os.environ.get('IP', '192.168.1.3')
+    host = os.environ.get('IP', '192.168.1.4')
     app.run(host=host, port=port)
 
 
@@ -53,7 +53,7 @@ def test():
     # print(admins)
     from app.api.model.land import Plant
 
-    plant = Plant(name='mango', water_amount=100, fertilizer='7mada')
+    plant = Plant(name='apple', water_amount=100, fertilizer='7mada')
     db.session.add(plant)
     db.session.commit()
     plants = Plant.query.all()
