@@ -130,3 +130,36 @@ class UserLands(Resource):
             "data": [land.serialize for land in lands]
         }
         return response_opj, 200
+
+
+@app.route('/notf')
+class notf(Resource):
+    def post(self):
+        data = request.json
+        id = data.get('id')
+        user = User.query.get(id)
+        if not user:
+            response_opj = {
+                'status': "faild",
+                "message": f"no user has id = {id}!"
+            }
+            return response_opj, 500
+        sens = data.get('sensor') or None
+        print('sensss ', sens)
+        if not sens:
+            response_opj = {
+                'status': "faild",
+                "message": f"no number given!"
+            }
+
+            return response_opj, 500
+        rsp = 'continue'
+        if int(sens) < 200:
+            rsp = 'pump on'
+        elif int(sens) > 250:
+            rsp = 'pump off'
+        response_opj = {
+            'status': "success",
+            "senssor": f"{rsp}!"
+        }
+        return response_opj, 200

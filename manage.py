@@ -3,7 +3,7 @@ from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
 import operator
 from flask_cors import CORS
-
+import socket
 from app import creat_app, db
 from app.api import blueprint as api_bl
 from app.dashboard.base.routes import blueprint as base_bl
@@ -33,7 +33,8 @@ app.register_blueprint(forms_bl)
 @manager.command
 @manager.option('-p', '--port', help='app port, default=5000')
 def run(port=5000):
-    host = os.environ.get('IP', '192.168.1.4')
+    ip = socket.gethostbyname(socket.getfqdn())
+    host = os.environ.get('IP', ip)
     app.run(host=host, port=port)
 
 

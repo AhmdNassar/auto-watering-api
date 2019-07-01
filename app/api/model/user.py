@@ -18,6 +18,7 @@ class User(db.Model, UserMixin):
     phone = db.Column(db.String(11), nullable=False)
     lands = db.relationship('Land', backref='user', lazy=False)
     role = db.Column(db.String(10), default='user')  # can be user or admin
+    notfication = db.Column(db.String, default='none')
 
     @property
     def password(self):
